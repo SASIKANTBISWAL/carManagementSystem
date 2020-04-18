@@ -100,6 +100,21 @@ public class CarsController {
 	} 
 	
 	@RequestMapping(value="/cars/{id}", method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Object putCar(@PathVariable @NotNull @DecimalMin("0") int id, @RequestBody Car car) {
+		try {
+			car.setCarId(id);
+			if(carJdbcRepository.updateCar(car)) {
+				return new ResponseEntity<Object> (HttpStatus.OK);
+			} else {
+				return new ResponseEntity<Object> (null, HttpStatus.BAD_REQUEST);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<Object> (null, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@RequestMapping(value="/cars", method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Object putCar(@RequestBody Car car) {
 		try {
 			if(carJdbcRepository.updateCar(car)) {
