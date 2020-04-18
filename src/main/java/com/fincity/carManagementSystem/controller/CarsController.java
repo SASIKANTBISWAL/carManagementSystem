@@ -99,7 +99,7 @@ public class CarsController {
 		}
 	} 
 	
-	@RequestMapping(value="/cars", method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/cars/{id}", method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Object putCar(@RequestBody Car car) {
 		try {
 			if(carJdbcRepository.updateCar(car)) {
