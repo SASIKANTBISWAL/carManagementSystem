@@ -100,7 +100,7 @@ public class CarsController {
 	} 
 	
 	@RequestMapping(value="/cars/{id}", method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Object putCar(@PathVariable @NotNull @DecimalMin("0") int id, @RequestBody Car car) {
+	public @ResponseBody Object postCar(@PathVariable @NotNull @DecimalMin("0") int id, @RequestBody Car car) {
 		try {
 			car.setCarId(id);
 			if(carJdbcRepository.updateCar(car)) {
