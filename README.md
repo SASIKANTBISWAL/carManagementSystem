@@ -1,6 +1,10 @@
 # carManagementSystem
 Spring Boot Rest API CRUD operation.
 
+# Login details:
+Username : user
+Password : fincity
+
 # Sample GET Requests:
 GET all Cars:
 
@@ -24,7 +28,7 @@ curl -X GET http://127.0.0.1:8080/cars/2020
 GET all cars by color:
 
 curl -X GET http://127.0.0.1:8080/cars/Pearl
-Sample POST Requests:
+# Sample POST Requests:
 POST new car:
 
 curl -X POST \
@@ -38,10 +42,10 @@ curl -X POST \
         "manufacturingYear": "2018",
         "color": "Royal Blue"
   }'
-DELETE recently added car:
+# DELETE recently added car:
 
 curl -X DELETE http://127.0.0.1:8080/cars
-Sample PUT Requests:
+# Sample PUT Requests:
 PUT(update data) car object:
 
 curl -X PUT \
@@ -67,7 +71,7 @@ curl -X PUT \
         "manufacturingYear": "2017",
         "color": "Indegene Orange"
   }'
-Sample DELETE Requests:
+# Sample DELETE Requests:
 DELETE car with ID = 5:
 
 curl -X DELETE http://127.0.0.1:8080/cars/1
